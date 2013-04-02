@@ -1,0 +1,29 @@
+.container {
+	font-family: Arial;
+	width: 600px;
+	height: 25px;
+	left: 50%;
+	margin-top: 15px;
+	margin-left: 0px;
+	text-align: center;
+	position: relative;
+}
+table td div {
+	width: 15px;
+	height: 13px;
+}
+.cursor {
+	background: yellow;
+	border: 2px #000 solid;
+	height: 20px;
+	width: 20px;
+	left: 50%;
+	margin-top: 16px;
+	position: absolute;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	-khtml-opacity: 0.3;
+	opacity: 0.3;
+}

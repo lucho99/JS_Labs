@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Amazon S3 File Upload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+		<script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js'></script>
+		<script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js'></script>
+		<script type='text/javascript' src='libs/base64.js'></script>
+		<script type='text/javascript' src='libs/sha1.js'></script>
+		<script type='text/javascript' src='js/amazon.s3.api.js'></script>
+
+		<script type='text/javascript'>
+		
+			$(document).ready(function() {
+
+				var amz = new AmazonS3Api({
+					filename: 'test.jpg',
+					data: 'data:image/jpeg;base64,...', //Base64 String
+					bucket: 'YOUR BUCKET',
+					acl: 'public-read',
+					contentType: 'image/jpeg',
+					folder: 'images/',
+					AWSAccessKeyId: 'YOUR ACCESSKEYID',
+					AWSSecretKeyId: 'YOUR SECRETKEYID'
+				});
+				
+				amz.bind("fileUploaded", function(location) {
+					$("#container").append('<a href="'+ location +'">Your uploaded Image</a>');
+				});
+				
+				$("#button").bind("click", function() {
+					amz.upload();
+				});
+				
+			});
+		
+		</script>
+	</head>
+
+	<body>
+		<div id='container' >
+			<button id="button">Upload!</button>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Turing Machine :|: Cryptography</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/turing-machine.js"></script>
+	</head>
+	<body onload="turing_machine._init()">
+		<h1 style="text-align: center;">Turing Machine
+		<br>
+		<small>(Caesar's cipher)</small></h1>
+		<div style="font-size: 12px;font-family: Arial;margin-left: -150px;position: relative;left: 50%;width: 300px;text-align:center;border:1px #000 solid; background:#efefef">
+			<div>
+				<label><strong>Input:</strong></label>
+				<br>
+				<input id="i_str" type="text" value="">
+			</div>
+			<div>
+				<input id="encode_btn" type="submit" value="Encode">
+				<input id="decode_btn" type="submit" value="Decode">
+			</div>
+			<div style="height:30px;"></div>
+			<div>
+				<label><strong>Output:</strong></label>
+				<br>
+				<input id="o_str" type="text" readonly value="">
+			</div>
+			<input id="swipe_btn" type="submit" value="Swap">
+		</div>
+		<div style="display: none" id="alphabet-cursor" class="cursor"></div>
+		<div style="display: none" id="wrap-alphabet" class="container">
+			<table border="1" id="alphabet" style="text-align: center;font-size: 12px;"></table>
+		</div>
+		<div style="display: none" id="input-text-cursor" class="cursor"></div>
+		<div style="display: none" id="wrap-input-text" class="container">
+			<table border="1" id="input-text" style="text-align: center;font-size: 12px;"></table>
+		</div>
+		<div style="display: none" id="output-text-cursor" class="cursor"></div>
+		<div style="display: none" id="wrap-output-text" class="container">
+			<table border="1" id="output-text" style="text-align: center;font-size: 12px;"></table>
+		</div>
+	</body>
+</html>
